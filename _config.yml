@@ -1,0 +1,72 @@
+title: Dustman
+email: your-email@example.com
+description: >-
+  Personal website of Dustman
+baseurl: ""
+url: "https://www.dustman.me"
+
+# Build settings
+markdown: kramdown
+theme: agency-jekyll-theme
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Agency theme specific settings
+agency:
+  # Hero section
+  hero:
+    title: "Dustman"
+    subtitle: "Welcome to my personal website"
+    background: "/img/header-bg.jpg"
+    cta:
+      text: "Learn More"
+      link: "#about"
+  
+  # About section
+  about:
+    title: "About Me"
+    content: "Write your introduction here"
+  
+  # Services section
+  services:
+    title: "Services"
+    subtitle: "What I can do"
+    items:
+      - title: "Service 1"
+        description: "Description of service 1"
+        icon: "fa-code"
+      - title: "Service 2"
+        description: "Description of service 2"
+        icon: "fa-laptop"
+      - title: "Service 3"
+        description: "Description of service 3"
+        icon: "fa-lock"
+  
+  # Portfolio section
+  portfolio:
+    title: "Portfolio"
+    subtitle: "My work"
+    items:
+      - title: "Project 1"
+        image: "/img/portfolio/01-thumbnail.jpg"
+        description: "Project description"
+        link: "#"
+  
+  # Contact section
+  contact:
+    title: "Contact"
+    subtitle: "Get in touch"
+    email: "your-email@example.com"
+    phone: "+1 234 567 890"
+    address: "Your Address" 
