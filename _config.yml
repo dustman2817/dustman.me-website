@@ -1,72 +1,65 @@
-title: Dustman
-email: your-email@example.com
-description: >-
-  Personal website of Dustman
-baseurl: "/dustman.me-website"
-url: "https://www.dustman.me"
+url: https://y7kim.github.io
+baseurl: /agency-jekyll-theme/
+
+# Site settings
+title: Awesome Title
+email: your-email@domain.com
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+
+
+# Team names, titles and social links
+people:
+- name: Kay Garland
+  pic: 1
+  position: Lead Designer
+  social:
+    - title: twitter
+      url: #
+    - title: facebook
+      url: #
+    - title: stack-overflow
+      url: #
+
+- name: Larry Parker
+  pic: 2
+  position: Lead Marketer
+  social:
+    - title: twitter
+      url: #
+    - title: facebook
+      url: #
+    - title: linkedin
+      url: #
+
+- name: Diana Petersen
+  pic: 3
+  position: Lead Developer
+  social:
+    - title: twitter
+      url: #
+    - title: facebook
+      url: #
+    - title: google-plus
+      url: #
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: http://twitter.com/jekyllrb
+  - title: facebook
+    url:
+  - title: stack-overflow
+    url: http://stackoverflow.com/questions/tagged/jekyll
+  - title: bitbucket 
+    url: http://bitbucket.org/jekyll
+  - title: github
+    url: http://github.com/jekyll
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: 3481 Melrose Place
+  - line: Beverly Hills, CA 90210
 
 # Build settings
 markdown: kramdown
-theme: agency-jekyll-theme
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-
-# Agency theme specific settings
-agency:
-  # Hero section
-  hero:
-    title: "Dustman"
-    subtitle: "Welcome to my personal website"
-    background: "/img/header-bg.jpg"
-    cta:
-      text: "Learn More"
-      link: "#about"
-  
-  # About section
-  about:
-    title: "About Me"
-    content: "Write your introduction here"
-  
-  # Services section
-  services:
-    title: "Services"
-    subtitle: "What I can do"
-    items:
-      - title: "Service 1"
-        description: "Description of service 1"
-        icon: "fa-code"
-      - title: "Service 2"
-        description: "Description of service 2"
-        icon: "fa-laptop"
-      - title: "Service 3"
-        description: "Description of service 3"
-        icon: "fa-lock"
-  
-  # Portfolio section
-  portfolio:
-    title: "Portfolio"
-    subtitle: "My work"
-    items:
-      - title: "Project 1"
-        image: "/img/portfolio/01-thumbnail.jpg"
-        description: "Project description"
-        link: "#"
-  
-  # Contact section
-  contact:
-    title: "Contact"
-    subtitle: "Get in touch"
-    email: "your-email@example.com"
-    phone: "+1 234 567 890"
-    address: "Your Address" 
+permalink: pretty
