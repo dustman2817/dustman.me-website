@@ -20,14 +20,28 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          ruby-version: '3.1'
           bundler-cache: true
+      
+      - name: Debug Ruby
+        run: |
+          ruby -v
+          gem -v
+          which ruby
+          which gem
       
       - name: Install dependencies
         run: |
-          gem install bundler
+          gem install bundler -v 2.4.22
+          bundle -v
           bundle config set --local path 'vendor/bundle'
-          bundle install --jobs 4 --retry 3
+          bundle config set --local deployment 'true'
+          bundle install --jobs 4 --retry 3 --verbose
+      
+      - name: Debug Jekyll
+        run: |
+          bundle exec jekyll -v
+          bundle exec jekyll doctor
       
       - name: Build site
         run: bundle exec jekyll build --verbose
