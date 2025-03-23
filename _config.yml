@@ -2,7 +2,7 @@ title: Dustman
 email: your-email@example.com
 description: >-
   Personal website of Dustman
-baseurl: ""
+baseurl: "/dustman.me-website"
 url: "https://www.dustman.me"
 
 # Build settings
