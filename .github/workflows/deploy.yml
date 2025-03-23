@@ -24,19 +24,13 @@ jobs:
           bundler-cache: true
       
       - name: Install dependencies
-        run: bundle install
-      
-      - name: Copy theme files
         run: |
-          cp -r agency-jekyll-theme/_includes/* _includes/
-          cp -r agency-jekyll-theme/_layouts/* _layouts/
-          cp -r agency-jekyll-theme/_sass/* _sass/
-          cp -r agency-jekyll-theme/css/* css/
-          cp -r agency-jekyll-theme/js/* js/
-          cp -r agency-jekyll-theme/img/* img/
+          gem install bundler
+          bundle config set --local path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
       
       - name: Build site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --verbose
 
   deploy:
     needs: build

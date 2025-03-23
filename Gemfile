@@ -1,9 +1,10 @@
 source "https://rubygems.org"
 
-gem "jekyll"
+gem "jekyll", "~> 4.3.2"
 gem "jekyll-feed"
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
+gem "webrick"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
