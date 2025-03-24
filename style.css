@@ -1,3 +1,49 @@
 ---
 layout: style
 ---
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+/* 添加中文字体 */
+body {
+  font-family: 'Lato', 'Noto Sans SC', "Microsoft YaHei", "微软雅黑", "SimHei", "黑体", sans-serif;
+  overflow-x: hidden;
+}
+
+.navbar-default {
+  background-color: #222;
+  border-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", "Noto Sans SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-weight: 700;
+}
+
+.intro-lead-in {
+  font-family: "Droid Serif", "Noto Serif SC", "SimSun", "宋体", serif;
+}
+
+.intro-heading {
+  font-family: "Montserrat", "Noto Sans SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-weight: 700;
+}
+
+section h2.section-heading {
+  font-family: "Montserrat", "Noto Sans SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+
+section h3.section-subheading {
+  font-family: "Droid Serif", "Noto Serif SC", "SimSun", "宋体", serif;
+}
+
+/* 不影响原有字体的情况下为中文元素提供更好的显示 */
+.lang-zh {
+  font-family: "Noto Sans SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+
+.lang-zh-serif {
+  font-family: "Noto Serif SC", "SimSun", "宋体", serif;
+}

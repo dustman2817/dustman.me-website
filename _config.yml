@@ -2,15 +2,28 @@ url: https://www.dustman.me
 baseurl: ""
 
 # Site settings
-title: Dustman's Website
+title: "Dustman的个人网站"
+title_en: "Dustman's Website"
 email: your-email@domain.com
-description: "Personal website of Dustman showcasing projects and skills."
+description: "个人网站，展示Dustman的项目和技能。"
+description_en: "Personal website of Dustman showcasing projects and skills."
+lang: "zh-CN"  # 默认语言为中文
+
+# 导航菜单
+nav:
+  home: "首页"
+  services: "服务"
+  portfolio: "作品集"
+  about: "关于"
+  team: "团队"
+  contact: "联系"
 
 # Team names, titles and social links
 people:
-- name: Dustman
+- name: "Dustman"
   pic: 1
-  position: Developer
+  position: "开发者"
+  position_en: "Developer"
   social:
     - title: github
       url: https://github.com/dustman2817
@@ -22,8 +35,37 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: Your Address Line 1
-  - line: Your Address Line 2
+  - line: "您的地址第1行"
+  - line: "您的地址第2行"
+
+# Services section
+services:
+  - title: "Web设计"
+    title_en: "Web Design"
+    desc: "提供现代化、响应式的网页设计服务，让您的网站在各种设备上都能完美展示。"
+    desc_en: "Modern and responsive web design services that look perfect on any device."
+    icon: laptop
+    
+  - title: "应用开发"
+    title_en: "App Development"
+    desc: "开发高性能的移动和网页应用，为用户提供流畅的体验。"
+    desc_en: "High-performance mobile and web applications with a seamless user experience."
+    icon: mobile
+    
+  - title: "数据分析"
+    title_en: "Data Analytics"
+    desc: "利用大数据和分析工具帮助您做出明智的业务决策。"
+    desc_en: "Make informed business decisions with our big data and analytics tools."
+    icon: chart-area
+
+# Contact section
+contact:
+  title: "联系我们"
+  title_en: "Contact Us"
+  text: "如有任何问题或合作意向，请随时联系我们！"
+  text_en: "Please contact us for any questions or collaboration opportunities."
+  button_text: "发送消息"
+  button_text_en: "Send Message"
 
 # Build settings
 markdown: kramdown
