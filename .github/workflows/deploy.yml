@@ -10,11 +10,6 @@ permissions:
   pages: write
   id-token: write
 
-# 设置并发控制
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,8 +23,12 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: true
       
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Debug Ruby
+        run: |
+          ruby -v
+          gem -v
+          which ruby
+          which gem
       
       - name: Install dependencies
         run: |
@@ -39,13 +38,13 @@ jobs:
           bundle config set --local deployment 'true'
           bundle install --jobs 4 --retry 3 --verbose
       
+      - name: Debug Jekyll
+        run: |
+          bundle exec jekyll -v
+          bundle exec jekyll doctor
+      
       - name: Build site
         run: bundle exec jekyll build --verbose
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: "_site"
 
   deploy:
     needs: build
