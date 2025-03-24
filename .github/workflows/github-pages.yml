@@ -12,11 +12,11 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -29,14 +29,10 @@ jobs:
           gem install bundler
           bundle install
           bundle exec jekyll build
-          echo "www.dustman.me" > _site/CNAME
         
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          cname: www.dustman.me
-          enable_jekyll: false
-          keep_files: false
-          force_orphan: true 
+          folder: _site
+          branch: gh-pages
+          clean: true 
