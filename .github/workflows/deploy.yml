@@ -10,12 +10,20 @@ permissions:
   pages: write
   id-token: write
 
+# 定义单一的并发组，确保一次只运行一个部署工作流
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -45,6 +53,11 @@ jobs:
       
       - name: Build site
         run: bundle exec jekyll build --verbose
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "_site/"
 
   deploy:
     needs: build
