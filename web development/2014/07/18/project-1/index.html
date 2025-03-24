@@ -23,6 +23,9 @@
     <!-- 中文字体支持 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- 语言切换样式 -->
+    <link rel="stylesheet" href="/css/language-switch.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,19 +60,28 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">服务</a>
+                        <a class="page-scroll" href="#services" data-lang-key="services">服务</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">作品集</a>
+                        <a class="page-scroll" href="#portfolio" data-lang-key="portfolio">作品集</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">关于</a>
+                        <a class="page-scroll" href="#about" data-lang-key="about">关于</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">团队</a>
+                        <a class="page-scroll" href="#team" data-lang-key="team">团队</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">联系</a>
+                        <a class="page-scroll" href="#contact" data-lang-key="contact">联系</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-globe"></i> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="lang-switch" data-lang="zh">中文</a></li>
+                            <li><a href="#" class="lang-switch" data-lang="en">English</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -82,9 +94,9 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">欢迎来到我的网站！</div>
-                <div class="intro-heading">很高兴认识您</div>
-                <a href="#services" class="page-scroll btn btn-xl">了解更多</a>
+                <div class="intro-lead-in" data-lang-key="welcome">欢迎来到我的网站！</div>
+                <div class="intro-heading" data-lang-key="nice-to-meet">很高兴认识您</div>
+                <a href="#services" class="page-scroll btn btn-xl" data-lang-key="tell-more">了解更多</a>
             </div>
         </div>
     </header>
@@ -104,8 +116,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">服务</h2>
-                    <h3 class="section-subheading text-muted">我们提供专业的服务，满足您的各种需求。</h3>
+                    <h2 class="section-heading" data-lang-key="services">服务</h2>
+                    <h3 class="section-subheading text-muted" data-lang-key="services-subtitle">我们提供专业的服务，满足您的各种需求。</h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -115,8 +127,14 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Web设计</h4>
-                    <p class="text-muted">提供现代化、响应式的网页设计服务，让您的网站在各种设备上都能完美展示。</p>
+                    <h4 class="service-heading">
+                        <span class="lang-zh">Web设计</span>
+                        <span class="lang-en" style="display:none;">Web Design</span>
+                    </h4>
+                    <p class="text-muted">
+                        <span class="lang-zh">提供现代化、响应式的网页设计服务，让您的网站在各种设备上都能完美展示。</span>
+                        <span class="lang-en" style="display:none;">Modern and responsive web design services that look perfect on any device.</span>
+                    </p>
                 </div>
                 
                 <div class="col-md-4">
@@ -124,8 +142,14 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">应用开发</h4>
-                    <p class="text-muted">开发高性能的移动和网页应用，为用户提供流畅的体验。</p>
+                    <h4 class="service-heading">
+                        <span class="lang-zh">应用开发</span>
+                        <span class="lang-en" style="display:none;">App Development</span>
+                    </h4>
+                    <p class="text-muted">
+                        <span class="lang-zh">开发高性能的移动和网页应用，为用户提供流畅的体验。</span>
+                        <span class="lang-en" style="display:none;">High-performance mobile and web applications with a seamless user experience.</span>
+                    </p>
                 </div>
                 
                 <div class="col-md-4">
@@ -133,8 +157,14 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-chart-area fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">数据分析</h4>
-                    <p class="text-muted">利用大数据和分析工具帮助您做出明智的业务决策。</p>
+                    <h4 class="service-heading">
+                        <span class="lang-zh">数据分析</span>
+                        <span class="lang-en" style="display:none;">Data Analytics</span>
+                    </h4>
+                    <p class="text-muted">
+                        <span class="lang-zh">利用大数据和分析工具帮助您做出明智的业务决策。</span>
+                        <span class="lang-en" style="display:none;">Make informed business decisions with our big data and analytics tools.</span>
+                    </p>
                 </div>
                 
             </div>
@@ -393,8 +423,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">
+                        <span class="lang-zh">联系我们</span>
+                        <span class="lang-en" style="display:none;">Contact Us</span>
+                    </h2>
+                    <h3 class="section-subheading text-muted">
+                        <span class="lang-zh">如有任何问题或合作意向，请随时联系我们！</span>
+                        <span class="lang-en" style="display:none;">Please contact us for any questions or collaboration opportunities.</span>
+                    </h3>
                 </div>
             </div>
             <div class="row">
@@ -402,29 +438,32 @@
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="control-group form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="您的姓名 / Your Name *" id="name" required data-validation-required-message="请输入您的姓名。">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="control-group form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="您的邮箱 / Your Email *" id="email" required data-validation-required-message="请输入您的邮箱地址。">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="control-group form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="您的电话 / Your Phone *" id="phone" required data-validation-required-message="请输入您的电话号码。">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="control-group form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="您的留言 / Your Message *" id="message" required data-validation-required-message="请输入您的留言内容。"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-xl">
+                                    <span class="lang-zh">发送消息</span>
+                                    <span class="lang-en" style="display:none;">Send Message</span>
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -707,6 +746,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/js/agency.js"></script>
+    
+    <!-- Language Switch JavaScript -->
+    <script src="/js/language-switch.js"></script>
 
 
     </body>
