@@ -44,6 +44,8 @@
     font-family: "Montserrat", "Noto Sans SC", "Microsoft YaHei", sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
+    line-height: 20px;
+    padding: 15px !important;
 }
 
 .navbar .dropdown > a.dropdown-toggle:hover,
@@ -81,5 +83,38 @@
 /* 确保语言标签在站点顶部的导航栏中显示正确 */
 .navbar-default .navbar-nav > li.dropdown > a {
     color: white !important;
-    padding: 15px 10px !important;
+}
+
+/* 确保所有导航栏项目有相同的高度和对齐 */
+.navbar-default .navbar-nav > li > a {
+    height: 50px;
+    line-height: 20px;
+    padding: 15px !important;
+    box-sizing: border-box;
+}
+
+/* 确保语言下拉菜单正确对齐 */
+.navbar-nav > li.dropdown {
+    display: flex;
+    align-items: center;
+}
+
+/* 修正导航栏高度在不同屏幕大小下的一致性 */
+@media (min-width: 768px) {
+    .navbar-default {
+        padding: 25px 0;
+        border: 0;
+        background-color: transparent;
+        transition: padding 0.3s;
+    }
+    
+    .navbar-default .navbar-nav > li > a,
+    .navbar-default .navbar-nav > li.dropdown > a {
+        padding: 15px !important;
+    }
+    
+    .navbar-default.navbar-shrink .navbar-nav > li > a,
+    .navbar-default.navbar-shrink .navbar-nav > li.dropdown > a {
+        padding: 15px !important;
+    }
 } 
