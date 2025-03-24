@@ -79,7 +79,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Dustman的个人网站</a>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <span class="lang-zh">Dustman的个人网站</span>
+                    <span class="lang-en" style="display:none;">Dustman's Website</span>
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -89,27 +92,45 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services" data-lang-key="services">服务</a>
+                        <a class="page-scroll" href="#services">
+                            <span class="lang-zh">服务</span>
+                            <span class="lang-en" style="display:none;">Services</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio" data-lang-key="portfolio">作品集</a>
+                        <a class="page-scroll" href="#portfolio">
+                            <span class="lang-zh">作品集</span>
+                            <span class="lang-en" style="display:none;">Portfolio</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about" data-lang-key="about">关于</a>
+                        <a class="page-scroll" href="#about">
+                            <span class="lang-zh">关于</span>
+                            <span class="lang-en" style="display:none;">About</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team" data-lang-key="team">团队</a>
+                        <a class="page-scroll" href="#team">
+                            <span class="lang-zh">团队</span>
+                            <span class="lang-en" style="display:none;">Team</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact" data-lang-key="contact">联系</a>
+                        <a class="page-scroll" href="#contact">
+                            <span class="lang-zh">联系</span>
+                            <span class="lang-en" style="display:none;">Contact</span>
+                        </a>
                     </li>
                     <li class="dropdown lang-selector">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-globe"></i> 语言 <span class="caret"></span>
+                            <i class="fa fa-globe"></i> 
+                            <span class="lang-zh">语言</span>
+                            <span class="lang-en" style="display:none;">Language</span>
+                            <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu language-menu">
-                            <li><a href="javascript:void(0);" class="lang-switch" onclick="console.log('中文被点击')" data-lang="zh">中文</a></li>
-                            <li><a href="javascript:void(0);" class="lang-switch" onclick="console.log('English被点击')" data-lang="en">English</a></li>
+                            <li><a href="javascript:void(0);" class="lang-switch" data-lang="zh">中文</a></li>
+                            <li><a href="javascript:void(0);" class="lang-switch" data-lang="en">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -123,9 +144,18 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in" data-lang-key="welcome">欢迎来到我的网站！</div>
-                <div class="intro-heading" data-lang-key="nice-to-meet">很高兴认识您</div>
-                <a href="#services" class="page-scroll btn btn-xl" data-lang-key="tell-more">了解更多</a>
+                <div class="intro-lead-in">
+                    <span class="lang-zh">欢迎来到我的网站！</span>
+                    <span class="lang-en" style="display:none;">Welcome to My Website!</span>
+                </div>
+                <div class="intro-heading">
+                    <span class="lang-zh">很高兴认识您</span>
+                    <span class="lang-en" style="display:none;">Nice to Meet You</span>
+                </div>
+                <a href="#services" class="page-scroll btn btn-xl">
+                    <span class="lang-zh">了解更多</span>
+                    <span class="lang-en" style="display:none;">Learn More</span>
+                </a>
             </div>
         </div>
     </header>
@@ -817,30 +847,6 @@
         // 记录语言切换按钮数量
         const langBtns = document.querySelectorAll('.lang-switch');
         console.log('找到语言切换按钮: ' + langBtns.length + '个');
-        
-        // 手动添加点击事件以强制生效
-        langBtns.forEach(function(btn) {
-          btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            console.log('手动设置语言为: ' + lang);
-            localStorage.setItem('language', lang);
-            
-            if (lang === 'zh') {
-              document.querySelectorAll('.lang-en').forEach(function(el) { el.style.display = 'none'; });
-              document.querySelectorAll('.lang-zh').forEach(function(el) { el.style.display = ''; });
-            } else {
-              document.querySelectorAll('.lang-zh').forEach(function(el) { el.style.display = 'none'; });
-              document.querySelectorAll('.lang-en').forEach(function(el) { el.style.display = ''; });
-            }
-            
-            // 高亮当前语言按钮
-            document.querySelectorAll('.lang-switch').forEach(function(el) {
-              el.classList.remove('active');
-            });
-            this.classList.add('active');
-          });
-        });
       });
     </script>
 
