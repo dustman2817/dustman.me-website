@@ -1,0 +1,19 @@
+/* 语言切换样式 */
+.lang-switch {
+    cursor: pointer;
+}
+
+.lang-switch.active {
+    font-weight: bold;
+    color: #fed136 !important;
+}
+
+.dropdown-menu > li > a.lang-switch:hover,
+.dropdown-menu > li > a.lang-switch:focus {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.dropdown-menu > li > a.lang-switch.active {
+    background-color: #f5f5f5;
+} 

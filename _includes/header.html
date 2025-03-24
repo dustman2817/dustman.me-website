@@ -19,19 +19,28 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">{{ site.nav.services }}</a>
+                        <a class="page-scroll" href="#services" data-lang-key="services">{{ site.nav.services }}</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">{{ site.nav.portfolio }}</a>
+                        <a class="page-scroll" href="#portfolio" data-lang-key="portfolio">{{ site.nav.portfolio }}</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">{{ site.nav.about }}</a>
+                        <a class="page-scroll" href="#about" data-lang-key="about">{{ site.nav.about }}</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">{{ site.nav.team }}</a>
+                        <a class="page-scroll" href="#team" data-lang-key="team">{{ site.nav.team }}</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">{{ site.nav.contact }}</a>
+                        <a class="page-scroll" href="#contact" data-lang-key="contact">{{ site.nav.contact }}</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-globe"></i> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="lang-switch" data-lang="zh">中文</a></li>
+                            <li><a href="#" class="lang-switch" data-lang="en">English</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -44,9 +53,9 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">欢迎来到我的网站！</div>
-                <div class="intro-heading">很高兴认识您</div>
-                <a href="#services" class="page-scroll btn btn-xl">了解更多</a>
+                <div class="intro-lead-in" data-lang-key="welcome">欢迎来到我的网站！</div>
+                <div class="intro-heading" data-lang-key="nice-to-meet">很高兴认识您</div>
+                <a href="#services" class="page-scroll btn btn-xl" data-lang-key="tell-more">了解更多</a>
             </div>
         </div>
     </header>
