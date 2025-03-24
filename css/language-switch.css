@@ -1,47 +1,81 @@
-/* 语言切换样式 */
+/* 语言切换样式 - 符合Agency主题 */
 .lang-switch {
     cursor: pointer;
-    color: #555 !important; 
-    padding: 8px 12px !important;
+    color: #555;
+    padding: 8px 12px;
     display: block;
     text-decoration: none !important;
+    font-family: "Montserrat", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
 }
 
 .lang-switch.active {
-    font-weight: bold;
-    color: #fed136 !important; 
-    background-color: #222 !important;
+    font-weight: 700;
+    color: #fed136 !important;
+    background-color: rgba(34, 34, 34, 0.05);
 }
 
 .dropdown-menu {
-    background-color: #fff !important;
-    min-width: 100px !important;
+    background-color: #fff;
+    min-width: 100px;
+    border-radius: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-menu > li > a {
-    color: #333 !important;
-    padding: 8px 15px !important;
+.dropdown-menu > li > a.lang-switch {
+    color: #555;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 
 .dropdown-menu > li > a.lang-switch:hover,
 .dropdown-menu > li > a.lang-switch:focus {
-    background-color: #f8f8f8 !important;
-    color: #333 !important;
+    background-color: #f8f8f8;
+    color: #fed136;
 }
 
-/* 调整导航栏中的语言切换图标 */
+/* 导航栏中的语言切换按钮样式 */
+.navbar .dropdown > a.dropdown-toggle {
+    color: white;
+    text-transform: uppercase;
+    font-family: "Montserrat", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.navbar .dropdown > a.dropdown-toggle:hover,
+.navbar .dropdown > a.dropdown-toggle:focus {
+    color: #fed136;
+}
+
 .navbar .dropdown .fa-globe {
     color: #fff;
-    font-size: 16px;
-} 
+    font-size: 14px;
+    margin-right: 5px;
+}
 
-/* 语言切换下拉菜单的额外样式 */
+/* 语言切换下拉菜单 */
 .language-menu {
     right: 0;
     left: auto !important;
-    border-radius: 4px !important;
-    margin-top: 0 !important;
-    border: 1px solid #ccc !important;
+    margin-top: 0;
+    border: none;
+    border-radius: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .language-menu {
+        right: auto;
+        left: 0 !important;
+    }
+    
+    .dropdown-menu > li > a.lang-switch {
+        color: #555;
+        text-align: center;
+    }
 }
 
 /* 确保语言标签在站点顶部的导航栏中显示正确 */
