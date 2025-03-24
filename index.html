@@ -41,12 +41,25 @@
             cursor: pointer !important;
             display: block !important;
             padding: 10px 15px !important;
+            transition: color 0.3s ease-in-out !important;
         }
         .dropdown-menu {
             background-color: white !important;
         }
         .lang-en { 
             display: none;
+        }
+        /* 激活状态的语言按钮 */
+        .lang-switch.active {
+            font-weight: bold !important;
+            color: #fed136 !important;
+        }
+        /* 移动设备适配 */
+        @media (max-width: 768px) {
+            .navbar-nav .dropdown .dropdown-menu {
+                padding: 0;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -90,7 +103,7 @@
                     <li>
                         <a class="page-scroll" href="#contact" data-lang-key="contact">联系</a>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown lang-selector">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-globe"></i> 语言 <span class="caret"></span>
                         </a>
