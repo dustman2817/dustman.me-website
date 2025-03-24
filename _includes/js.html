@@ -18,3 +18,18 @@
     
     <!-- Language Switch JavaScript -->
     <script src="{{ "/js/language-switch.js" | prepend: site.baseurl }}"></script>
+    
+    <!-- 初始化语言切换 -->
+    <script>
+      $(document).ready(function() {
+        // 确保DOM加载后执行一次语言设置
+        let currentLang = localStorage.getItem('language') || 'zh';
+        // 手动调用一次applyLanguage（以防language-switch.js未正确执行）
+        if (currentLang === 'en') {
+          $('.lang-zh').hide();
+          $('.lang-en').show();
+          $('.lang-switch').removeClass('active');
+          $('.lang-switch[data-lang="en"]').addClass('active');
+        }
+      });
+    </script>
