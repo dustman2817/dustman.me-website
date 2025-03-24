@@ -1,13 +1,14 @@
 // 语言切换功能
-$(document).ready(function() {
+$(function() {
     // 初始化语言设置
     let currentLang = localStorage.getItem('language') || 'zh';
     applyLanguage(currentLang);
     
-    // 语言切换处理
-    $('.lang-switch').click(function(e) {
+    // 语言切换处理 - 使用事件委托以确保动态元素也能响应
+    $(document).on('click', '.lang-switch', function(e) {
         e.preventDefault();
         const targetLang = $(this).data('lang');
+        console.log('Language switched to: ' + targetLang); // 调试日志
         localStorage.setItem('language', targetLang);
         applyLanguage(targetLang);
     });

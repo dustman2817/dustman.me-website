@@ -1,19 +1,33 @@
 /* 语言切换样式 */
 .lang-switch {
     cursor: pointer;
+    color: #555 !important; /* 确保文字颜色与背景有足够对比 */
 }
 
 .lang-switch.active {
     font-weight: bold;
-    color: #fed136 !important;
+    color: #fed136 !important; /* 高亮激活的语言选项 */
+}
+
+.dropdown-menu {
+    background-color: #fff !important; /* 确保下拉菜单背景是白色 */
+}
+
+.dropdown-menu > li > a {
+    color: #333 !important; /* 确保下拉菜单文字颜色是深色 */
 }
 
 .dropdown-menu > li > a.lang-switch:hover,
 .dropdown-menu > li > a.lang-switch:focus {
     background-color: #f8f8f8;
-    color: #333;
+    color: #333 !important;
 }
 
 .dropdown-menu > li > a.lang-switch.active {
     background-color: #f5f5f5;
+}
+
+/* 调整导航栏中的语言切换图标 */
+.navbar .dropdown .fa-globe {
+    color: #fff; /* 白色图标在深色导航栏上更明显 */
 } 
