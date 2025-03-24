@@ -12,11 +12,17 @@ lang: "zh-CN"  # 默认语言为中文
 # 导航菜单
 nav:
   home: "首页"
+  home_en: "Home"
   services: "服务"
+  services_en: "Services"
   portfolio: "作品集"
+  portfolio_en: "Portfolio"
   about: "关于"
+  about_en: "About"
   team: "团队"
+  team_en: "Team"
   contact: "联系"
+  contact_en: "Contact"
 
 # Team names, titles and social links
 people:

@@ -9,7 +9,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">{{site.title}}</a>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <span class="lang-zh">{{site.title}}</span>
+                    <span class="lang-en" style="display:none;">{{site.title_en}}</span>
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,27 +22,45 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services" data-lang-key="services">{{ site.nav.services }}</a>
+                        <a class="page-scroll" href="#services">
+                            <span class="lang-zh">{{ site.nav.services }}</span>
+                            <span class="lang-en" style="display:none;">{{ site.nav.services_en }}</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio" data-lang-key="portfolio">{{ site.nav.portfolio }}</a>
+                        <a class="page-scroll" href="#portfolio">
+                            <span class="lang-zh">{{ site.nav.portfolio }}</span>
+                            <span class="lang-en" style="display:none;">{{ site.nav.portfolio_en }}</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about" data-lang-key="about">{{ site.nav.about }}</a>
+                        <a class="page-scroll" href="#about">
+                            <span class="lang-zh">{{ site.nav.about }}</span>
+                            <span class="lang-en" style="display:none;">{{ site.nav.about_en }}</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team" data-lang-key="team">{{ site.nav.team }}</a>
+                        <a class="page-scroll" href="#team">
+                            <span class="lang-zh">{{ site.nav.team }}</span>
+                            <span class="lang-en" style="display:none;">{{ site.nav.team_en }}</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact" data-lang-key="contact">{{ site.nav.contact }}</a>
+                        <a class="page-scroll" href="#contact">
+                            <span class="lang-zh">{{ site.nav.contact }}</span>
+                            <span class="lang-en" style="display:none;">{{ site.nav.contact_en }}</span>
+                        </a>
                     </li>
                     <li class="dropdown lang-selector">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-globe"></i> 语言 <span class="caret"></span>
+                            <i class="fa fa-globe"></i> 
+                            <span class="lang-zh">语言</span>
+                            <span class="lang-en" style="display:none;">Language</span>
+                            <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu language-menu">
-                            <li><a href="javascript:void(0);" class="lang-switch" onclick="console.log('中文被点击')" data-lang="zh">中文</a></li>
-                            <li><a href="javascript:void(0);" class="lang-switch" onclick="console.log('English被点击')" data-lang="en">English</a></li>
+                            <li><a href="javascript:void(0);" class="lang-switch" data-lang="zh">中文</a></li>
+                            <li><a href="javascript:void(0);" class="lang-switch" data-lang="en">English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -53,9 +74,18 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in" data-lang-key="welcome">欢迎来到我的网站！</div>
-                <div class="intro-heading" data-lang-key="nice-to-meet">很高兴认识您</div>
-                <a href="#services" class="page-scroll btn btn-xl" data-lang-key="tell-more">了解更多</a>
+                <div class="intro-lead-in">
+                    <span class="lang-zh">欢迎来到我的网站！</span>
+                    <span class="lang-en" style="display:none;">Welcome to My Website!</span>
+                </div>
+                <div class="intro-heading">
+                    <span class="lang-zh">很高兴认识您</span>
+                    <span class="lang-en" style="display:none;">Nice to Meet You</span>
+                </div>
+                <a href="#services" class="page-scroll btn btn-xl">
+                    <span class="lang-zh">了解更多</span>
+                    <span class="lang-en" style="display:none;">Learn More</span>
+                </a>
             </div>
         </div>
     </header>
