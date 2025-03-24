@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 更新带有data-lang-key的元素
         updateTranslations(lang);
+        
+        // 更新表单占位符
+        updateFormPlaceholders(lang);
     }
     
     function hideElements(selector) {
@@ -75,6 +78,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // 更新表单占位符和验证消息
+    function updateFormPlaceholders(lang) {
+        if (lang === 'zh') {
+            updatePlaceholder('#name', '您的姓名 *', '请输入您的姓名。');
+            updatePlaceholder('#email', '您的邮箱 *', '请输入您的邮箱地址。');
+            updatePlaceholder('#phone', '您的电话 *', '请输入您的电话号码。');
+            updatePlaceholder('#message', '您的留言 *', '请输入您的留言内容。');
+        } else {
+            updatePlaceholder('#name', 'Your Name *', 'Please enter your name.');
+            updatePlaceholder('#email', 'Your Email *', 'Please enter your email address.');
+            updatePlaceholder('#phone', 'Your Phone *', 'Please enter your phone number.');
+            updatePlaceholder('#message', 'Your Message *', 'Please enter a message.');
+        }
+    }
+    
+    function updatePlaceholder(selector, placeholder, validationMessage) {
+        const el = document.querySelector(selector);
+        if (el) {
+            el.setAttribute('placeholder', placeholder);
+            el.setAttribute('data-validation-required-message', validationMessage);
+        }
+    }
+    
     // 翻译数据
     const translations = {
         'services': {
@@ -88,6 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
         'about': {
             'zh': '关于',
             'en': 'About'
+        },
+        'about-subtitle': {
+            'zh': '关于我们的发展历程',
+            'en': 'Our Journey and Development'
         },
         'team': {
             'zh': '团队',
@@ -116,6 +146,14 @@ document.addEventListener('DOMContentLoaded', function() {
         'team-subtitle': {
             'zh': '专业的技术团队为您提供优质服务',
             'en': 'Our professional team provides excellent service'
+        },
+        'success-message': {
+            'zh': '<strong>您的消息已成功发送！</strong>',
+            'en': '<strong>Your message has been sent successfully!</strong>'
+        },
+        'error-message': {
+            'zh': '<strong>抱歉！</strong> 发送消息时出现错误，请稍后再试。',
+            'en': '<strong>Sorry!</strong> An error occurred while sending your message. Please try again later.'
         }
     };
 }); 
