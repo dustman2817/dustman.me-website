@@ -21,7 +21,7 @@ nav:
 # Team names, titles and social links
 people:
 - name: "Dustman"
-  pic: 1
+  pic: 0
   position: "开发者"
   position_en: "Developer"
   social:

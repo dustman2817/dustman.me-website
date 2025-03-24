@@ -78,6 +78,10 @@ $(function() {
         'services-subtitle': {
             'zh': '我们提供专业的服务，满足您的各种需求。',
             'en': 'Professional services to meet all your needs.'
+        },
+        'team-subtitle': {
+            'zh': '专业的技术团队为您提供优质服务',
+            'en': 'Our professional team provides excellent service'
         }
     };
 }); 
