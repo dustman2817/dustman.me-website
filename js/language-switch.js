@@ -111,6 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'zh': '作品集',
             'en': 'Portfolio'
         },
+        'portfolio-subtitle': {
+            'zh': '我们的项目展示',
+            'en': 'Showcase of Our Projects'
+        },
         'about': {
             'zh': '关于',
             'en': 'About'
