@@ -28,28 +28,13 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <!-- 语言切换样式 - 放在最后以确保优先级 -->
+    <!-- 语言切换样式 -->
     <link rel="stylesheet" href="{{ "/css/language-switch.css" | prepend: site.baseurl }}">
     
-    <!-- 直接添加内联样式以确保语言切换功能的基本显示 -->
+    <!-- 基本语言切换样式 -->
     <style>
-        /* 基本语言切换样式备份 */
-        .lang-switch {
-            cursor: pointer !important;
-            display: block !important;
-            padding: 10px 15px !important;
-            transition: color 0.3s ease-in-out !important;
-        }
-        .dropdown-menu {
-            background-color: white !important;
-        }
         .lang-en { 
             display: none;
-        }
-        /* 激活状态的语言按钮 */
-        .lang-switch.active {
-            font-weight: bold !important;
-            color: #fed136 !important;
         }
         /* 移动设备适配 */
         @media (max-width: 768px) {

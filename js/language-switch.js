@@ -1,5 +1,5 @@
-// 语言切换功能 - 简化版
-document.addEventListener('DOMContentLoaded', function() {
+// 语言切换功能
+$(document).ready(function() {
     console.log('Language switch script loaded');
     
     // 初始化语言
@@ -13,69 +13,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // 添加点击事件监听器
-    const langSwitches = document.querySelectorAll('.lang-switch');
-    langSwitches.forEach(function(el) {
-        el.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetLang = this.getAttribute('data-lang');
-            console.log('Switching to language: ' + targetLang);
-            switchLanguage(targetLang);
-        });
+    $('.lang-switch').on('click', function(e) {
+        e.preventDefault();
+        const targetLang = $(this).data('lang');
+        console.log('Switching to language: ' + targetLang);
+        switchLanguage(targetLang);
     });
     
     // 语言切换功能
     function switchLanguage(lang) {
         console.log('Applying language: ' + lang);
         // 移除所有语言按钮的active类
-        document.querySelectorAll('.lang-switch').forEach(function(el) {
-            el.classList.remove('active');
-        });
+        $('.lang-switch').removeClass('active');
         
         // 为当前语言按钮添加active类
-        const activeLangSwitch = document.querySelector(`.lang-switch[data-lang="${lang}"]`);
-        if (activeLangSwitch) {
-            activeLangSwitch.classList.add('active');
-        }
+        $(`.lang-switch[data-lang="${lang}"]`).addClass('active');
         
         // 保存语言选择
         localStorage.setItem('language', lang);
         
         if (lang === 'zh') {
             // 显示中文，隐藏英文
-            hideElements('.lang-en');
-            showElements('.lang-zh');
+            $('.lang-en').hide();
+            $('.lang-zh').show();
         } else {
             // 显示英文，隐藏中文
-            hideElements('.lang-zh');
-            showElements('.lang-en');
+            $('.lang-zh').hide();
+            $('.lang-en').show();
         }
-        
-        // 更新带有data-lang-key的元素
-        updateTranslations(lang);
         
         // 更新表单占位符
         updateFormPlaceholders(lang);
-    }
-    
-    function hideElements(selector) {
-        document.querySelectorAll(selector).forEach(function(el) {
-            el.style.display = 'none';
-        });
-    }
-    
-    function showElements(selector) {
-        document.querySelectorAll(selector).forEach(function(el) {
-            el.style.display = '';
-        });
-    }
-    
-    function updateTranslations(lang) {
-        document.querySelectorAll('[data-lang-key]').forEach(function(el) {
-            const key = el.getAttribute('data-lang-key');
-            if (translations[key] && translations[key][lang]) {
-                el.innerHTML = translations[key][lang];
-            }
-        });
     }
     
     // 更新表单占位符和验证消息
@@ -94,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updatePlaceholder(selector, placeholder, validationMessage) {
-        const el = document.querySelector(selector);
-        if (el) {
-            el.setAttribute('placeholder', placeholder);
-            el.setAttribute('data-validation-required-message', validationMessage);
+        const el = $(selector);
+        if (el.length) {
+            el.attr('placeholder', placeholder);
+            el.attr('data-validation-required-message', validationMessage);
         }
     }
     
