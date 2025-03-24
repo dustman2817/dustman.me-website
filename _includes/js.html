@@ -19,17 +19,37 @@
     <!-- Language Switch JavaScript -->
     <script src="{{ "/js/language-switch.js" | prepend: site.baseurl }}"></script>
     
-    <!-- 初始化语言切换 -->
+    <!-- 确保语言切换功能正确初始化 -->
     <script>
-      $(document).ready(function() {
-        // 确保DOM加载后执行一次语言设置
-        let currentLang = localStorage.getItem('language') || 'zh';
-        // 手动调用一次applyLanguage（以防language-switch.js未正确执行）
-        if (currentLang === 'en') {
-          $('.lang-zh').hide();
-          $('.lang-en').show();
-          $('.lang-switch').removeClass('active');
-          $('.lang-switch[data-lang="en"]').addClass('active');
-        }
+      // 调试模式 - 检查页面是否正确加载语言切换器
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('页面加载完成，开始初始化语言开关');
+        // 记录语言切换按钮数量
+        const langBtns = document.querySelectorAll('.lang-switch');
+        console.log('找到语言切换按钮: ' + langBtns.length + '个');
+        
+        // 手动添加点击事件以强制生效
+        langBtns.forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            console.log('手动设置语言为: ' + lang);
+            localStorage.setItem('language', lang);
+            
+            if (lang === 'zh') {
+              document.querySelectorAll('.lang-en').forEach(function(el) { el.style.display = 'none'; });
+              document.querySelectorAll('.lang-zh').forEach(function(el) { el.style.display = ''; });
+            } else {
+              document.querySelectorAll('.lang-zh').forEach(function(el) { el.style.display = 'none'; });
+              document.querySelectorAll('.lang-en').forEach(function(el) { el.style.display = ''; });
+            }
+            
+            // 高亮当前语言按钮
+            document.querySelectorAll('.lang-switch').forEach(function(el) {
+              el.classList.remove('active');
+            });
+            this.classList.add('active');
+          });
+        });
       });
     </script>

@@ -1,44 +1,78 @@
-// 语言切换功能
-$(function() {
-    // 初始化语言设置
-    let currentLang = localStorage.getItem('language') || 'zh';
-    applyLanguage(currentLang);
+// 语言切换功能 - 简化版
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Language switch script loaded');
     
-    // 语言切换处理 - 使用事件委托以确保动态元素也能响应
-    $(document).on('click', '.lang-switch', function(e) {
-        e.preventDefault();
-        const targetLang = $(this).data('lang');
-        console.log('Language switched to: ' + targetLang); // 调试日志
-        localStorage.setItem('language', targetLang);
-        applyLanguage(targetLang);
+    // 初始化语言
+    const savedLang = localStorage.getItem('language');
+    if (savedLang) {
+        console.log('Found saved language: ' + savedLang);
+        switchLanguage(savedLang);
+    } else {
+        console.log('No saved language, using default: zh');
+        localStorage.setItem('language', 'zh');
+    }
+    
+    // 添加点击事件监听器
+    const langSwitches = document.querySelectorAll('.lang-switch');
+    langSwitches.forEach(function(el) {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetLang = this.getAttribute('data-lang');
+            console.log('Switching to language: ' + targetLang);
+            switchLanguage(targetLang);
+        });
     });
     
-    // 应用语言设置
-    function applyLanguage(lang) {
-        // 更新语言切换按钮状态
-        $('.lang-switch').removeClass('active');
-        $(`.lang-switch[data-lang="${lang}"]`).addClass('active');
+    // 语言切换功能
+    function switchLanguage(lang) {
+        console.log('Applying language: ' + lang);
+        // 移除所有语言按钮的active类
+        document.querySelectorAll('.lang-switch').forEach(function(el) {
+            el.classList.remove('active');
+        });
         
-        // 显示对应语言的元素
-        if (lang === 'zh') {
-            $('.lang-en').hide();
-            $('.lang-zh').show();
-            $('[data-lang-key]').each(function() {
-                const key = $(this).data('lang-key');
-                if (translations[key] && translations[key].zh) {
-                    $(this).html(translations[key].zh);
-                }
-            });
-        } else {
-            $('.lang-zh').hide();
-            $('.lang-en').show();
-            $('[data-lang-key]').each(function() {
-                const key = $(this).data('lang-key');
-                if (translations[key] && translations[key].en) {
-                    $(this).html(translations[key].en);
-                }
-            });
+        // 为当前语言按钮添加active类
+        const activeLangSwitch = document.querySelector(`.lang-switch[data-lang="${lang}"]`);
+        if (activeLangSwitch) {
+            activeLangSwitch.classList.add('active');
         }
+        
+        // 保存语言选择
+        localStorage.setItem('language', lang);
+        
+        if (lang === 'zh') {
+            // 显示中文，隐藏英文
+            hideElements('.lang-en');
+            showElements('.lang-zh');
+        } else {
+            // 显示英文，隐藏中文
+            hideElements('.lang-zh');
+            showElements('.lang-en');
+        }
+        
+        // 更新带有data-lang-key的元素
+        updateTranslations(lang);
+    }
+    
+    function hideElements(selector) {
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.style.display = 'none';
+        });
+    }
+    
+    function showElements(selector) {
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.style.display = '';
+        });
+    }
+    
+    function updateTranslations(lang) {
+        document.querySelectorAll('[data-lang-key]').forEach(function(el) {
+            const key = el.getAttribute('data-lang-key');
+            if (translations[key] && translations[key][lang]) {
+                el.innerHTML = translations[key][lang];
+            }
+        });
     }
     
     // 翻译数据

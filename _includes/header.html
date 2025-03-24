@@ -34,12 +34,12 @@
                         <a class="page-scroll" href="#contact" data-lang-key="contact">{{ site.nav.contact }}</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-globe"></i> <span class="caret"></span>
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-globe"></i> 语言 <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu language-menu">
-                            <li><a href="javascript:void(0);" class="lang-switch" data-lang="zh">中文</a></li>
-                            <li><a href="javascript:void(0);" class="lang-switch" data-lang="en">English</a></li>
+                            <li><a href="javascript:void(0);" class="lang-switch" onclick="console.log('中文被点击')" data-lang="zh">中文</a></li>
+                            <li><a href="javascript:void(0);" class="lang-switch" onclick="console.log('English被点击')" data-lang="en">English</a></li>
                         </ul>
                     </li>
                 </ul>
