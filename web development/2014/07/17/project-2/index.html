@@ -526,6 +526,33 @@
             </div>
         </div>
     </section>
+    <!-- Clients Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -859,6 +886,17 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/js/agency.js"></script>
+    
+    <!-- 确保语言切换功能正确初始化 -->
+    <script>
+      // 调试模式 - 检查页面是否正确加载语言切换器
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('页面加载完成，开始初始化语言开关');
+        // 记录语言切换按钮数量
+        const langBtns = document.querySelectorAll('.lang-switch');
+        console.log('找到语言切换按钮: ' + langBtns.length + '个');
+      });
+    </script>
 
 
     </body>
