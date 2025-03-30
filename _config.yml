@@ -2,8 +2,10 @@ url: https://www.dustman.me
 baseurl: ""
 
 # Site settings
-title: "Dustman的个人网站"
-title_en: "Dustman's Website"
+# title: "Dustman的个人网站"
+# title_en: "Dustman's Website"
+title: "Dustman的主页"
+title_en: "Dustman's Home"
 email: your-email@domain.com
 description: "个人网站，展示Dustman的项目和技能。"
 description_en: "Personal website of Dustman showcasing projects and skills."
@@ -26,7 +28,7 @@ nav:
 
 # Team names, titles and social links
 people:
-- name: "Dustman"
+- name: "Dustman2817"
   pic: 0
   position: "开发者"
   position_en: "Developer"
