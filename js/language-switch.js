@@ -8,8 +8,9 @@ $(document).ready(function() {
         console.log('Found saved language: ' + savedLang);
         switchLanguage(savedLang);
     } else {
-        console.log('No saved language, using default: zh');
-        localStorage.setItem('language', 'zh');
+        console.log('No saved language, using default: en');
+        localStorage.setItem('language', 'en');
+        switchLanguage('en');
     }
     
     // 添加点击事件监听器
