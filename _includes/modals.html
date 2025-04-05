@@ -38,3 +38,51 @@
         </div>
     </div>
 {% endfor %}
+
+<!-- Works Modals -->
+{% for work in site.works %}
+    <div class="portfolio-modal modal fade" id="worksModal{{ forloop.index }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>
+                                <span class="lang-zh">{{ work.title }}</span>
+                                <span class="lang-en" style="display:none;">{{ work.title_en }}</span>
+                            </h2>
+                            <hr class="star-primary">
+                            {% for showcase_image in work.showcase_images %}
+                                <img src="img/works/{{ showcase_image }}" class="img-responsive img-centered" alt="{{ work.title }}">
+                                {% if forloop.first %}
+                                <div class="work-description">
+                                    <p class="lang-zh">{{ work.description }}</p>
+                                    <p class="lang-en" style="display:none;">{{ work.description_en }}</p>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                            <div class="text-center" style="margin-top: 20px;">
+                                <a href="{{ work.link }}" target="_blank" class="btn btn-primary">
+                                    <span class="lang-zh">查看详情</span>
+                                    <span class="lang-en" style="display:none;">View Details</span>
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    <i class="fa fa-times"></i> 
+                                    <span class="lang-zh">关闭</span>
+                                    <span class="lang-en" style="display:none;">Close</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

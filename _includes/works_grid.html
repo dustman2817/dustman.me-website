@@ -8,18 +8,18 @@
                     <span class="lang-en" style="display:none;">{{ site.nav.works_en }}</span>
                 </h2>
                 <h3 class="section-subheading text-muted">
-                    <span class="lang-zh">我的作品展示</span>
-                    <span class="lang-en" style="display:none;">Showcase of My Works</span>
+                    <span class="lang-zh">我们的作品展示</span>
+                    <span class="lang-en" style="display:none;">Showcase of our works</span>
                 </h3>
             </div>
         </div>
         <div class="row">
             {% for work in site.works %}
             <div class="col-md-4 col-sm-6 portfolio-item">
-                <a href="{{ work.link }}" class="portfolio-link" target="_blank">
+                <a href="#worksModal{{ forloop.index }}" class="portfolio-link" data-toggle="modal">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
-                            <i class="fa fa-external-link fa-3x"></i>
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
                     <img src="img/works/{{ work.card_image }}" class="img-responsive img-centered" alt="{{ work.title }}">
