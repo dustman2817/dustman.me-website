@@ -17,8 +17,8 @@ nav:
   home_en: "Home"
   services: "服务"
   services_en: "Services"
-  portfolio: "作品集"
-  portfolio_en: "Portfolio"
+  works: "作品"
+  works_en: "Works"
   about: "关于"
   about_en: "About"
   team: "团队"
@@ -78,3 +78,16 @@ contact:
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Works section
+works:
+  - title: "Transform Enhancer"
+    title_en: "Transform Enhancer"
+    subtitle: "Unity编辑器扩展工具，让您更方便地操作Transform和RectTransform组件"
+    subtitle_en: "Unity editor extension to enhance Transform and RectTransform operations"
+    card_image: "Transform Enhancer/Card image.jpg"
+    icon_image: "Transform Enhancer/Icon image.jpg"
+    showcase_images: 
+      - "Transform Enhancer/Showcase image 1.jpg"
+      - "Transform Enhancer/Showcase image 2.jpg"
+    link: "https://assetstore.unity.com/packages/slug/311787"
