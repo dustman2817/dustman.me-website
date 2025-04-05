@@ -46,6 +46,37 @@
                 text-align: center;
             }
         }
+        
+        /* 轮播图样式自定义 */
+        .carousel-control.left, .carousel-control.right {
+            background-image: none;
+            filter: none;
+            opacity: 0.7;
+        }
+        .carousel-control:hover {
+            opacity: 1;
+        }
+        .carousel-control span.fa {
+            color: #fed136;
+            text-shadow: 0 1px 2px rgba(0,0,0,.6);
+            z-index: 5;
+            display: inline-block;
+        }
+        /* 确保轮播指示器只显示小圆点，不显示其他控制元素 */
+        .carousel-indicators {
+            bottom: 10px;
+        }
+        .carousel-indicators li {
+            margin: 1px 3px;
+            border: 1px solid #fed136;
+            background-color: transparent;
+        }
+        .carousel-indicators .active {
+            margin: 0 3px;
+            width: 12px;
+            height: 12px;
+            background-color: #fed136;
+        }
     </style>
 </head>
 
@@ -814,15 +845,15 @@
                                     
                                 </div>
                                 
-                                <!-- 控制 -->
-                                <!-- <a class="left carousel-control" href="#carousel-work-1" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <!-- 控制箭头 - 修改为仅在中间显示的箭头 -->
+                                <a class="left carousel-control" href="#carousel-work-1" role="button" data-slide="prev">
+                                    <span class="fa fa-angle-left fa-2x" style="position: absolute; top: 50%; left: 15px;"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="right carousel-control" href="#carousel-work-1" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="fa fa-angle-right fa-2x" style="position: absolute; top: 50%; right: 15px;"></span>
                                     <span class="sr-only">Next</span>
-                                </a> -->
+                                </a>
                             </div>
                             
                             <div class="work-description" style="margin-top: 20px;">
